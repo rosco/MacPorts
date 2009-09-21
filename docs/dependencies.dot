@@ -1,0 +1,26 @@
+strict digraph graphname {
+
+    eric [label="eric4"];
+    python [label="python25"];
+    qt4 [label="qt4-mac"];
+    sip [label="sip"];
+    qscintilla2 [label="qscintilla2-base"];
+    pyqt4 [label="py25-pyqt4"];
+    pyqscintilla2 [label="py25-pyqscintilla2"];
+        
+    eric -> python;
+    eric -> pyqt4;
+    eric -> pyqscintilla2;
+    
+    eric -> pyqscintilla2 -> pyqt4 -> qscintilla2 -> sip -> qt4;
+     
+    pyqt4 -> python;
+    pyqt4 -> qt4;
+    pyqt4 -> sip;
+    sip -> python;
+     
+    pyqscintilla2 -> python;
+    pyqscintilla2 -> qscintilla2;
+    pyqscintilla2 -> pyqt4;
+    qscintilla2 -> qt4;
+}

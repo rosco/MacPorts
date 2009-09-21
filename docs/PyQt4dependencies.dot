@@ -1,0 +1,12 @@
+strict digraph PyQt4 {
+
+    python [label="python25"];
+    qt4 [label="qt4-mac"];
+    sip [label="py-sip"];
+    pyqt4 [label="py25-pyqt4"];
+
+    pyqt4 -> sip -> qt4; 
+    pyqt4 -> python;
+    sip -> python;
+
+}

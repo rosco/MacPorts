@@ -1,0 +1,30 @@
+strict digraph eric {
+
+    eric [label="eric4"];
+    python [label="python25"];
+    qt4 [label="qt4-mac"];
+    sip [label="sip"];
+    qscintilla2 [label="qscintilla2-base"];
+    pyqt4 [label="py25-pyqt4"];
+    pyqscintilla2 [label="py25-pyqscintilla2"];
+     
+    subgraph clusterPyQt {
+        label = "PyQt4";
+        pyqt4 -> sip -> qt4; 
+    }
+
+    subgraph clusterPyScintilla2 {
+        label = "PyScintilla2";
+        pyqscintilla2 -> qscintilla2 -> qt4;
+        pyqscintilla2 -> pyqt4 -> qscintilla2 -> qt4;
+    }
+
+    eric -> python;
+    eric -> pyqscintilla2;
+    eric -> pyqt4;
+    
+    pyqt4 -> python;
+    sip -> python;
+    pyqscintilla2 - > python;
+
+}

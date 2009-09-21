@@ -1,0 +1,21 @@
+strict digraph eric4 {
+
+    eric [label="eric4"];
+    python [label="python25"];
+    qt4 [label="qt4-mac"];
+    sip [label="py-sip"];
+    qscintilla2 [label="qscintilla2-base"];
+    pyqt4 [label="py25-pyqt4"];
+    pyqscintilla2 [label="py25-pyqscintilla2"];
+        
+    eric -> python;    
+    eric -> pyqscintilla2 -> pyqt4 -> qscintilla2 -> sip -> qt4;    
+
+    pyqscintilla2 -> qscintilla2 -> qt4;
+    pyqscintilla2 -> pyqt4 -> qscintilla2;
+    pyqscintilla2 -> python;
+    
+    pyqt4 -> sip -> qt4; 
+    pyqt4 -> python;
+    sip -> python;
+}
