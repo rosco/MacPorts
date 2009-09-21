@@ -25,19 +25,11 @@ checksums		    md5     c97028915201a28b9d728ff89658e522 \
 build.cmd           ${python.bin} install.py \
                     -a ${prefix}/libexec/qt4-mac/qsci/ \
                     -b ${destroot}/${prefix}/bin
-#                    -b ${prefix}/bin
-
-#                    -a ${prefix}/libexec/qt4-mac/qsci/api/python \
-#                   -a ${prefix}/libexec/qt4-mac/include/Qsci \
                                                                  
 destroot.cmd        ${python.bin} install.py \
                     -a ${prefix}/libexec/qt4-mac/qsci/ \
                     -b ${destroot}/${prefix}/bin
-
-# build             Execute ${build.cmd} in ${worksrcpath}.                    
-# destroot          Execute the command make install DESTDIR=${destroot}in ${worksrcpath}.      
-# install           Copy a port's destrooted files into ${prefix}/var/macports/software              
-# activate          Set hardlinks pointing to ${prefix}/var/macports/software to point to ${prefix}.                    
+               
                     
 # $ /opt/local/bin/python2.5 install.py -h
 # 
