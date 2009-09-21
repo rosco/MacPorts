@@ -1,0 +1,84 @@
+# $Id:  $
+# $Id: Portfile 54239 2009-07-23 17:35:24Z macsforever2000@macports.org $
+
+PortSystem 1.0
+name                py25-pyqscintilla
+version             2.4
+categories          python devel
+maintainers         openmaintainer
+
+platforms           darwin
+description         Python bindings for QScintilla.
+long_description    Python bindings for QScintilla.
+
+# all this is redundant as it is in port:qscintilla
+# the Python bindings are being created in this port so that 
+# another port (port:py25-pyqt4) can be built in between the current port and eric.
+homepage            http://www.riverbankcomputing.com/software/qscintilla/
+master_sites        http://www.riverbankcomputing.com/static/Downloads/QScintilla2/
+distname            QScintilla-gpl-${version}
+distfiles           ${distname}.tar.gz
+checksums           md5     dd69520ec91f1acb97a4eb74ddde37c9 \
+                    sha1    17962bb64d2641f9e181b39fdca39228170488a3 \
+                    rmd160  19e5d5c331705c217c5192b1fcac5d298942db69
+                    
+depends_lib         port:qscintilla \
+                    port:py25-pyqt4       
+
+worksrcdir          ${distname}
+
+configure.pre_args  
+#configure.dir       ${worksrcpath}/Python
+configure.dir       ${prefix}/var/macports/build/_Users_Ross_MacPorts_ports_devel_qscintilla/work/QScintilla-gpl-2.4/Python
+configure.cmd	    ${prefix}/bin/python2.5 configure.py
+# if only I could run this configure.cmd where port:qscintilla finished working. For the moment it is done manually...
+
+# $ cd /opt/local/var/macports/build/_Users_Ross_MacPorts_ports_devel_qscintilla/work/QScintilla-gpl-2.4/Python
+# $ sudo /opt/local/bin/python2.5 configure.py
+# Password:
+# QScintilla 2.4 is being used.
+# PyQt 4.5.4 is being used.
+# Qt v4.5.2 free edition is being used.
+# SIP 4.8.2 is being used.
+# The QScintilla module will be installed in
+# /opt/local/Library/Frameworks/Python.framework/Versions/2.5/lib/python2.5/site-packages/PyQt4.
+# The QScintilla API file will be installed in
+# /opt/local/libexec/qt4-mac/qsci/api/python.
+# The QScintilla .sip files will be installed in /opt/local/share/sip/PyQt4.
+# Generating the C++ source for the Qsci module...
+# Creating the Makefile for the Qsci module...
+
+# sudo make
+# sudo make install
+
+# $ cd /opt/local/var/macports/build/_Users_Ross_MacPorts_ports_devel_qscintilla/work/QScintilla-gpl-2.4/Python
+# $ /opt/local/bin/python2.5 configure.py --help
+# Usage: python configure.py [options]
+# 
+# Options:
+#   --version             show program's version number and exit
+#   -h, --help            show this help message and exit
+#   -a DIR, --apidir=DIR  where QScintilla's API file will be installed
+#                         [default: QTDIR/qsci]
+#   -c, --concatenate     concatenate the C++ source files
+#   -d DIR, --destdir=DIR
+#                         where the QScintilla module will be installed
+#                         [default: /opt/local/Library/Frameworks/Python.framewo
+#                         rk/Versions/2.5/lib/python2.5/site-packages/PyQt4]
+#   -j N, --concatenate-split=N
+#                         split the concatenated C++ source files into N pieces
+#                         [default: 1]
+#   -k, --static          build the QScintilla module as a static library
+#   -n DIR                the directory containing the QScintilla Qsci header
+#                         file directory [default:
+#                         /opt/local/libexec/qt4-mac/include]
+#   -o DIR                the directory containing the QScintilla library
+#                         [default: /opt/local/libexec/qt4-mac/lib]
+#   -p 3|4                specifically configure for PyQt v3 or v4 [default v4,
+#                         if found]
+#   -r, --trace           build the QScintilla module with tracing enabled
+#   -s                    QScintilla is a static library and not a DLL (Windows
+#                         only)
+#   -u, --debug           build the QScintilla module with debugging symbols
+#   -v DIR, --sipdir=DIR  where the QScintilla .sip files will be installed
+#                         [default: /opt/local/share/sip/PyQt4]
