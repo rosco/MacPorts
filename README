@@ -1,33 +1,29 @@
-h1. MacPorts under development which may make it into the standard MacPort
+MacPorts under development which may make it into the standard MacPort
 
-h2. eric4
+eric4
 
-bq. 
 version			    4.3.7.1
 description			Eric Integrated Development Environment.
 long_description	Eric is a Python IDE written using PyQt and QScintilla.
 
-h2.  py25-pyqscintilla
 
-bq. 
+py25-pyqscintilla
+DO NOT USE.
+Read comments in Portfiles to see manual workaround.
+
 version             2.4
 description         Python bindings for QScintilla.
 
-h2.  py25-pyqt4
 
-bq. 
+py25-pyqt4
+
 version		        4.5.4
 revision            1
 description	        PyQt4 is a set of Python bindings for the Qt4 toolkit
 
-h2.  qscintilla
 
-bq. 
+qscintilla
+
 version             2.4
 revision            1
 description         QScintilla is a port to Qt of Neil Hodgson's Scintilla C++ editor control.
-homepage            http://www.riverbankcomputing.com/software/qscintilla/
-
-
-
-
